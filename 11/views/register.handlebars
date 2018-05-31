@@ -1,0 +1,38 @@
+<div class="container login">
+      <div class="row align-items-center">
+      <div class="col-8"><span>Best PingPong is where you can set Pingpong game plans with other players.</span>
+        <br>
+        <ul>
+          <li>Esay arrangement, easy games.</li>
+          <li>Any stadiums, auto match up.</li>
+        </ul>
+      </div>
+      <div class="col-4">
+      {{#if user}}
+        <div class="alert alert-danger">Username has taken already try new</div> 
+{{/if}}
+{{#if mail}}
+        <div class="alert alert-danger">Email has taken already try new</div> 
+{{/if}} 
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+                <form action="/users/register" method="post">
+                <legend>Sign up for BPP:</legend>               
+                    Account:<br><input type="text" name="username" id="signacco" /><br>
+                    Name:<br><input type="text" name="name" id="signacco" /><br>
+                  Password:<br><input type="password" name="password" id="signpass"/><br>
+                  re-password:<br><input type="password" name="password2" id="signrepass"/><br>
+              Email address:<br><input type="email" name="email" id="signemail"/><br>
+              <br><input class="btn btn-primary" type="submit" value="Register" id="signregi" />
+               <a href="/"><button type="button" class="btn btn-primary" id="signcanc">Cancel</button>
+               
+               
+        </form> 
+
+
+      </div>
+      </div>
+    </div>
